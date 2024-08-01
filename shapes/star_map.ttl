@@ -1,8 +1,9 @@
 ###############################################################################
 # RML Star Map shape                                                          #
-# Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2023 - 2024)              #
 ###############################################################################
 @prefix : <http://w3id.org/rml/shapes/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rml: <http://w3id.org/rml/> .
@@ -13,7 +14,7 @@
     a sh:NodeShape ;
     sh:targetClass rml:StarMap ;
     sh:message "StarMap" ;
-    sh:description """
+    rdfs:comment """
     Represents a Star Map.
     """ ;
     sh:message """
@@ -27,8 +28,8 @@
         # Star Map specific shapes
         [
             sh:path rml:quotedTriplesMap ;
-            sh:name "quotedTriplesMap" ;
-            sh:description """
+            rdfs:label "quotedTriplesMap" ;
+            rdfs:comment """
             An Quoted Triples Map element to generate a RDF-star triple as 
             subject or object or another triple from a logical source record.
             """ ;
@@ -41,7 +42,7 @@
         ]
         [
             sh:targetObjectsOf rml:predicateObjectMap ;
-            sh:name "PredicateMap" ;
+            rdfs:label "PredicateMap" ;
             sh:message """
             An Quoted Triples Map may never be used for generating a predicate.
             """ ;
